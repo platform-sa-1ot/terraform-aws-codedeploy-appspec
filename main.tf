@@ -20,10 +20,9 @@ data "template_file" "appspec" {
 }
 
 resource "aws_s3_object" "appspec" {
-  key                    = local.appspec_key
-  bucket                 = var.appspec_bucket_name
-  content                = data.template_file.appspec.rendered
-  server_side_encryption = "AES256"
+  key     = local.appspec_key
+  bucket  = var.appspec_bucket_name
+  content = data.template_file.appspec.rendered
   tags = merge(var.tags, {
     IsAppspecRevisionObject = true
   })
