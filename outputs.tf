@@ -4,8 +4,7 @@ output "s3_key" {
 }
 
 output "s3_location" {
-  description = "The S3 address of the appspec file"
-  value       = "s3://${var.appspec_bucket_name}/${local.appspec_key}"
+  value = "bucket=${var.appspec_bucket_name},bundleType=YAML,key=${local.appspec_key}"
 }
 
 output "s3_id" {
