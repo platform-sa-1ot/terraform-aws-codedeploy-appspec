@@ -24,6 +24,6 @@ resource "aws_s3_object" "appspec" {
   bucket  = var.appspec_bucket_name
   content = data.template_file.appspec.rendered
   tags = merge(var.tags, {
-    IsAppspecRevisionObject = true
+    UseWithCodeDeploy = true
   })
 }
