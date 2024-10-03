@@ -23,7 +23,7 @@ data "template_file" "appspec" {
     subnet_ids          = jsonencode(var.subnet_ids)
     security_group_ids  = jsonencode(var.security_group_ids)
     assign_public_ip    = var.assign_public_ip ? "ENABLED" : "DISABLED"
-    random_id = random_id.rng.hex
+    random_id           = random_id.rng.hex
   }
 }
 
